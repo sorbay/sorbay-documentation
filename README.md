@@ -21,6 +21,6 @@ Add `export PATH=$PATH:$HOME/.local/bin` to your `.bashrc` file.
 
 ## Live development
 
-To preview the documentation site run: `mkdocs serve`
-To change the port you can use the `-a` option: `mkdocs serve -a localhost:8088`
+To preview the documentation site run: `mkdocs serve`  
+To change the port you can use the `-a` option: `mkdocs serve -a localhost:8088`  
 Open the browser and you will see the documentation site. Chaning any page will automatically refresh the view.

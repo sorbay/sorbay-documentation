@@ -14,11 +14,11 @@ the following options:
 * Workspace selector - shows the currently selected workspace
 * Start - Changes back to the start page that is also presented
   to the user after logging in.
-* Services - Opens the [services](services.md) page which allows to create,
+* Services - Opens the [services page](services.md) which allows to create,
   change and delete services.
-* Members - Opens the [members](members.md) page where you can add or remove
+* Members - Opens the [members page](members.md) where you can add or remove
   members for the currently selected workspace.
-* Settings - Opens the [workspace settings](settings.md) page.
+* Settings - Opens the workspace [settings page](settings.md).
   
 
 ## Basic Workflow

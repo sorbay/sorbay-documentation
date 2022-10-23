@@ -1,4 +1,4 @@
-# Index
+# Welcome
 
 Welcome to the Sorbay platform. 
 

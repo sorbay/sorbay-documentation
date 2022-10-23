@@ -16,11 +16,12 @@ plugins:
       lang: en                                      # Set language for search
 
 nav:
-  - Welcome: 'index.md'
+  - 'Welcome': 'index.md'
   - Getting Started: 'start.md'
   - Workspaces: 'workspaces.md'
   - Services:
     - About: 'services.md'
     - ID light Service: 'idlight.md'
   - Members: 'members.md'
+  - Settings: 'settings.md'
   - Help: 'help.md'

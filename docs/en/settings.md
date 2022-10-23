@@ -1,5 +1,3 @@
-## Settings
-
 This page allows to 
 
 * change workspace settings

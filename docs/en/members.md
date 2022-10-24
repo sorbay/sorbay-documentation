@@ -11,4 +11,18 @@ based on the currently set filter. If no filter is set, all users are listed.
 To add one or multiple new members, click the "Add Member" button in the
 lower right corner. It will open this dialog:
 
-![Screenshot](img/add_member.png)
+<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/add_member.png">
+
+In the "Email or username" input field, you can enter one or multiple
+email addresses or usernames.
+
+With the drop-down list below, select the role for the new member(s):
+
+* Workspace admin: The user can administrate workspaces, i.e. change workspace
+  settings, create new workspaces, and delete them.
+* Service admin: The user can create, change and remove services.
+
+Click the "Send invitation" button to trigger a mail with an invitation link being
+sent to the given users.
+
+TODO - WHAT IF USERNAME IS ENTERED INSTEAD OF EMAIL ADDRESS??? WHERE IS MAIL SENT ????

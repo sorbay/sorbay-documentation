@@ -3,7 +3,7 @@ personal user profile.
 
 To open the profile page, click the "Profile" option on the selector in the upper right corner:
 
-<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_selector_open.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_selector_open.png">
 
 ## Mail verification
 
@@ -28,11 +28,11 @@ Press the "Save" button in the lower right corner to apply and save the changes.
 
 To change your password, click the "Change Password" button in the "Password" section:
 
-<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_change_password.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_change_password.png">
 
 This will open a popup dialog where you can enter the new password string:
 
-<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_change_password_confirm.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_change_password_confirm.png">
 
 Apply and save the new password by clicking the "Submit" button.
 
@@ -42,27 +42,27 @@ For increased account security, it is recommended to enable two-factor authentic
 the widely available "Google Authenticator" app (iOS, Android). To enable this for your account,
 click on the "Two-Factor Authentication" button, which opens this dialog with a QR code:
 
-<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_qr_code.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_qr_code.png">
 
 Open your Authenticator app on your iOS or Android device and scan the QR code. This will create
 a new entry in your Authenticator app under the label "Sorbay". 
 Then continue to the next dialog where you will have to enter the code currently displayed by the Authenticator app,
 to confirm that the QR code was correctly processed:
 
-<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_verification_code.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_verification_code.png">
 
 Finally, another dialog will provide a download for backup recovery codes that you can use to 
 recover your account in case your iOS or Android device gets lost, stolen or damaged, and you cannot
 use the Authenticator app anymore.
 
-<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_recovery_codes.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_recovery_codes.png">
 
 Download the recovery codes by clicking the "Backup recovery codes" button, and then "Confirm download".
 
 Congratulations, you have now enabled two-factor authentication. The "Security" section in the 
 profile page now looks like this:
 
-<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_security_section_totp_enabled.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_security_section_totp_enabled.png">
 
 * Click "Disable two factor authentication" to switch back to logging in with password-only
 * Click "Download recovery codes" to re-download your recovery codes

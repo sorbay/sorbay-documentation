@@ -11,7 +11,7 @@ based on the currently set filter. If no filter is set, all users are listed.
 To add one or multiple new members, click the "Add Member" button in the
 lower right corner. It will open this dialog:
 
-<img style="margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/add_member.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/add_member.png">
 
 In the "Email or username" input field, you can enter one or multiple
 email addresses or usernames.

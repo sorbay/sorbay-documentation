@@ -16,6 +16,9 @@ lower right corner. It will open this dialog:
 In the "Email or username" input field, you can enter one or multiple
 email addresses or usernames.
 
+NOTE: Please ensure that the user accounts for the usernames or email
+addresses entered here have already been registered in Sorbay.
+
 With the drop-down list below, select the role for the new member(s):
 
 * Workspace admin: The user can administrate workspaces, i.e. change workspace

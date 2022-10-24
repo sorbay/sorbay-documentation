@@ -18,6 +18,7 @@ plugins:
 nav:
   - 'Welcome': 'index.md'
   - Getting Started: 'start.md'
+  - Profile: 'profile.md'
   - Workspaces: 'workspaces.md'
   - Services:
     - About: 'services.md'

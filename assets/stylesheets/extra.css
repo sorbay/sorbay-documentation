@@ -1,8 +1,8 @@
 @font-face {
   font-family: "AvenueMono";
   src: local("Avenue Mono"),
-       url(assets/fonts/AvenueMono.woff2) format("woff2"),
-       url(assets/fonts/AvenueMono.woff) format("woff");
+       url(/sorbay-documentation/assets/fonts/AvenueMono.woff2) format("woff2"),
+       url(/sorbay-documentation/assets/fonts/AvenueMono.woff) format("woff");
   font-weight: normal;
   font-style: normal;
 }

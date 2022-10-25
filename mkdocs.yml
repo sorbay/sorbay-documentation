@@ -16,8 +16,7 @@ plugins:
       lang: en                                      # Set language for search
 
 nav:
-  - 'Welcome': 'index.md'
-  - Getting Started: 'start.md'
+  - Welcome: 'index.md'
   - Profile: 'profile.md'
   - Workspaces: 'workspaces.md'
   - Services:

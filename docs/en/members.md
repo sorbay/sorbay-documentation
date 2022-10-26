@@ -16,8 +16,9 @@ lower right corner. It will open this dialog:
 In the "Email or username" input field, you can enter one or multiple
 email addresses or usernames.
 
-NOTE: Please ensure that the user accounts for the usernames or email
-addresses entered here have already been registered in Sorbay.
+NOTE: You can enter usernames or mail addresses of valid, existing users - or
+even of inexistent users. This allows you to pre-invite users that will maybe
+only later be able to perform the registration procedure.
 
 With the drop-down list below, select the role for the new member(s):
 
@@ -28,4 +29,3 @@ With the drop-down list below, select the role for the new member(s):
 Click the "Send invitation" button to trigger a mail with an invitation link being
 sent to the given users.
 
-TODO - WHAT IF USERNAME IS ENTERED INSTEAD OF EMAIL ADDRESS??? WHERE IS MAIL SENT ????

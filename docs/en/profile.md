@@ -66,7 +66,7 @@ profile page now looks like this:
 
 * Click "Disable two factor authentication" to switch back to logging in with password-only
 * Click "Download recovery codes" to re-download your recovery codes
-* Click "Reset recovery codes" to TODO ??????????????????
+* Click "Reset recovery codes" to create a new set of recovery codes
 
 ## Account removal
 

@@ -3,13 +3,13 @@
 All of your workspaces are available through the top-most navigation entry
 on the left side:
 
-<img style="width: 70%; margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/nav_workspace-selector.png">
+<img style="width: 40%; margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/nav_workspace-selector.png">
 
 ### Create new workspace
 
 To create a new workspace, select the last popup menu option, "Create workspace":
 
-<img style="width: 70%; margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/nav_workspace-create.png">
+<img style="width: 40%; margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/nav_workspace-create.png">
 
 Enter a name for the new workspace. The new workspace will be created
 and immediately selected in the workspace selector in the navigation.
@@ -18,7 +18,7 @@ and immediately selected in the workspace selector in the navigation.
 
 To change settings of a workspace - such as the name - choose the "Settings" option:
 
-<img style="width: 70%; margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/nav_settings.png">
+<img style="width: 40%; margin-left: 80px; border: 1px; border-style: solid; border-color: lightgray" src="../img/nav_settings.png">
 
 It will open the [settings page](settings.md) which allows you to change
 workspace settings, cede ownership of the workspace to another user, delete the

@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/</loc>
+         <loc>https://doc.sorbay.com/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/help/</loc>
+         <loc>https://doc.sorbay.com/help/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/idlight/</loc>
+         <loc>https://doc.sorbay.com/idlight/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/members/</loc>
+         <loc>https://doc.sorbay.com/members/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/profile/</loc>
+         <loc>https://doc.sorbay.com/profile/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/services/</loc>
+         <loc>https://doc.sorbay.com/services/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/settings/</loc>
+         <loc>https://doc.sorbay.com/settings/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/start/</loc>
+         <loc>https://doc.sorbay.com/start/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sorbay.github.io/sorbay-documentation/workspaces/</loc>
+         <loc>https://doc.sorbay.com/workspaces/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
     </url>

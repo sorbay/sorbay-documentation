@@ -2,8 +2,10 @@
 
 ## Functionality
 
-The IDLight service allows to easily store and manage identities,
-and authenticate users.
+The IDLight Service provides user management with authentication and 
+self-service capabilities for the End Users. The overall strategy is a 
+"Bring your own UI" so you may use the provided API from 
+IDLight to integrate the capabilities in your app.
 
 ### Authentication
 
@@ -118,5 +120,38 @@ domain for the session cookie, depending on your application's requirements.
 
 ### Accounts
 
-????????????????
+Under this tab, you can manage user accounts for users of the service.
+
+#### Create user
+
+To create a new service user, click the "+ Create user" button:
+
+<img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_create_user_button.png">
+
+This will open the following popup dialog where you can enter the 
+details of the new user account:
+
+<img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_create_user_popup.png">
+
+Chose the status for the new user account ("active" or "inactive") and then 
+create the new account by clicking the "Create user" button.
+
+#### User list
+
+Once you have created one or more service users, they will be listed 
+under the "Accounts" tab:
+
+<img style="margin-left: 80px; width: 50%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_user_list.png">
+
+#### Edit user
+
+To edit a user account, click the <img src="../img/button_open_details.png" /> symbol, or the "Open user" option in the popup menu:
+
+<img style="margin-left: 80px; width: 50%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
+
+#### Delete user
+
+To delete a user account, click the "Delete user" option in the popup menu:
+
+<img style="margin-left: 80px; width: 50%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
 

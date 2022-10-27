@@ -19,10 +19,6 @@ your users to manage their account and profile themselves, such as
 changing the password, changing user attributes or enabling
 two-factor authentication.
 
-### Integration (TBD)
-
-TBD ???????????????????????????
-
 ## Configuration
 
 To configure an instance of the IDlight service, click the "Service settings"
@@ -36,7 +32,7 @@ Its functionality is grouped in 4 tabs:
 * General - general settings for this IDlight service instance
 * Users - user-related configuration settings
 * Pages - custom UI URL configuration
-* Accounts - TBD:??????????????????????????????????????????????????????????????
+* Accounts - management of service user accounts
 
 ### General
 
@@ -100,12 +96,12 @@ JavaScript frontends that integrate with the service API.
 
 #### Redirects 
 
-* "Default URL" - ?????????
-* "Login URL" - ?????????
-* "Registration URL" - ?????????
-* "Settings URL" - ?????????
-* "Verification URL" - ?????????
-* "Logout URL" - ?????????
+* "Default URL" - 
+* "Login URL" - Login redirect URL
+* "Registration URL" - Registration redirect URL
+* "Settings URL" - Settings redirect URL
+* "Verification URL" - Verification redirect URL
+* "Logout URL" - Logout redirect URL
 
 #### CORS
 
@@ -131,7 +127,7 @@ To create a new service user, click the "+ Create user" button:
 This will open the following popup dialog where you can enter the 
 details of the new user account:
 
-<img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_create_user_popup.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_create_user_popup.png">
 
 Chose the status for the new user account ("active" or "inactive") and then 
 create the new account by clicking the "Create user" button.
@@ -141,17 +137,17 @@ create the new account by clicking the "Create user" button.
 Once you have created one or more service users, they will be listed 
 under the "Accounts" tab:
 
-<img style="margin-left: 80px; width: 50%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_user_list.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_user_list.png">
 
 #### Edit user
 
 To edit a user account, click the <img src="../img/button_open_details.png" /> symbol, or the "Open user" option in the popup menu:
 
-<img style="margin-left: 80px; width: 50%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
+<img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
 
 #### Delete user
 
 To delete a user account, click the "Delete user" option in the popup menu:
 
-<img style="margin-left: 80px; width: 50%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
+<img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
 

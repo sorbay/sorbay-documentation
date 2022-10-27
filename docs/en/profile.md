@@ -49,7 +49,7 @@ a new entry in your Authenticator app under the label "sorbay".
 Then continue to the next dialogue, where you will have to enter the code currently displayed in 
 the Authenticator app, to confirm that the QR code was correctly processed:
 
-<img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_verification_code.png">
+<img style="margin-left: 80px; width: 55%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_verification_code.png">
 
 Finally, another dialogue will provide a download for backup recovery codes, that you can use to 
 recover your account in case your iOS or Android device gets lost, stolen or damaged, and you cannot

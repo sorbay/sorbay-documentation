@@ -27,6 +27,6 @@ Finally you can delete the currently selected workspace:
 <img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/settings_delete-workspace.png">
 
 Click the "Delete workspace" button and confirm the deletion by clicking "Yes" in the
-confirmation popup dialog to delete the workspace and *irrevocably remove all its 
+confirmation pop up dialogue to delete the workspace and *irrevocably remove all its 
 associated services and resources*.
 

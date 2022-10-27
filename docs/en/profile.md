@@ -3,7 +3,7 @@ personal user profile.
 
 To open the profile page, click the "Profile" option on the selector in the upper right corner:
 
-<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_selector_open.png">
+<img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_selector_open.png">
 
 ## Email verification
 
@@ -28,7 +28,7 @@ Press the "Save" button in the lower right corner to apply and save the changes.
 
 To change your password, click the "Change Password" button in the "Password" section:
 
-<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_change_password.png">
+<img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_change_password.png">
 
 This will open a popup dialogue, where you can enter the new password string:
 

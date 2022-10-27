@@ -3,7 +3,7 @@
 ## Functionality
 
 The IDLight Service provides user management with authentication and 
-self-service capabilities for the End Users. The overall strategy is a 
+self-service capabilities for end users. The overall strategy is a 
 "Bring your own UI" so you may use the provided API from 
 IDLight to integrate the capabilities in your app.
 
@@ -14,7 +14,7 @@ authentication with the Google Authenticator app (iOS and Android).
 
 ### Self-Service
 
-The IDlight service includes self-service functionality that allows
+The IDlight service includes self-service functionality, that allows
 your users to manage their account and profile themselves, such as
 changing the password, changing user attributes or enabling
 two-factor authentication.
@@ -40,7 +40,7 @@ Its functionality is grouped in 4 tabs:
 
 At the top, you find the button "Open interfaces" which will open a new
 browser window with the URL of this instance of the IDlight service. What 
-you see here exactly may vary if you configure custom UI URLs in the "Pages"
+is displayed here exactly, varies if you configure custom UI URLs in the "Pages"
 section.
 
 #### Service name
@@ -55,7 +55,7 @@ Under "Service deletion", you can delete this service instance entirely.
 and all related data and resources.
 
 Delete the service by clicking the "Delete service" button, and then confirm
-the deletion in the following pop-up dialog.
+the deletion in the following pop up dialog.
 
 ### Users
 
@@ -67,8 +67,8 @@ several aspects related to the authentication and data storage of service users.
 Set the required minimum length for the password by adjusting the
 slider to the desired value.
 
-Enable the checkbox to enforce a check that prevents passwords that
-are equal to the username.
+Enable the checkbox to enforce a check, that prevents from passwords 
+that are equal to the username.
 
 #### Two Factor
 
@@ -85,7 +85,7 @@ _This functionality is not yet available during the beta testing phase!_
 
 Following the "Bring your own UI" philosophy, the IDlight service allows you
 to configure custom frontend URLs here. This could be custom-written 
-JavaScript frontends that integrate with the service API.
+JavaScript frontends, that integrate with the service API.
 
 * "Login URL" - Login application URL
 * "Registration URL" - Registration application URL
@@ -124,7 +124,7 @@ To create a new service user, click the "+ Create user" button:
 
 <img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_create_user_button.png">
 
-This will open the following popup dialog where you can enter the 
+This will open the following pop up dialogue where you can enter the 
 details of the new user account:
 
 <img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_create_user_popup.png">
@@ -141,13 +141,13 @@ under the "Accounts" tab:
 
 #### Edit user
 
-To edit a user account, click the <img src="../img/button_open_details.png" /> symbol, or the "Open user" option in the popup menu:
+To edit a user account, click the <img src="../img/button_open_details.png" /> symbol, or the "Open user" option in the pop up menu:
 
 <img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
 
 #### Delete user
 
-To delete a user account, click the "Delete user" option in the popup menu:
+To delete a user account, click the "Delete user" option in the pop up menu:
 
 <img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
 

@@ -143,11 +143,11 @@ under the "Accounts" tab:
 
 To edit a user account, click the <img src="../img/button_open_details.png" /> symbol, or the "Open user" option in the pop up menu:
 
-<img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
+<img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
 
 #### Delete user
 
 To delete a user account, click the "Delete user" option in the pop up menu:
 
-<img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
+<img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
 

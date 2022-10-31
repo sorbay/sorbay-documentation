@@ -36,11 +36,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://doc.sorbay.com/start/</loc>
-         <lastmod>2022-10-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://doc.sorbay.com/workspaces/</loc>
          <lastmod>2022-10-31</lastmod>
          <changefreq>daily</changefreq>

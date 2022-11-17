@@ -1,0 +1,39 @@
+site_name: 'Documentation'
+docs_dir: '../../docs/de'                           # Where to find the English markdown files
+site_dir: '../../generated/de'                      # Where to put the English HTML files
+
+theme:
+  name: material
+  custom_dir: '../../overrides/'                  # This is where the customization of the theme lives
+  logo: assets/images/sorbay-blue-white.png                 # The logo is shared by all languages
+  favicon: assets/images/favicon.png              # The favicon is shared by all languages
+  language: de                                    # The build's language
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  alternate:                                        # Language Selection
+
+    # Switch to English
+    - name: English
+      link: /en/
+      lang: en
+
+   # Switch to German
+    - name: Deutsch
+      link: /de/
+      lang: de
+
+
+plugins:
+  - search:
+      lang: de                                      # Set language for search
+
+nav:
+  - Willkommen: index.md
+  - Getting Started:
+     - started/index.md
+  - ID light Service:
+     - idlight/index.md
+  - Hilfe:
+      - hilfe/index.md

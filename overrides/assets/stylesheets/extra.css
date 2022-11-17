@@ -7,6 +7,10 @@
   font-style: normal;
 }
 
-.md-typeset h1, .md-typeset h2 {
+.md-typeset h1, .md-typeset h2,.md-sidebar,.md-ellipsis {
   font-family: "AvenueMono";
+}
+.md-header {
+    color: black;
+    background-color: white
 }

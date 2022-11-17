@@ -24,3 +24,10 @@ Add `export PATH=$PATH:$HOME/.local/bin` to your `.bashrc` file.
 To preview the documentation site run: `mkdocs serve`  
 To change the port you can use the `-a` option: `mkdocs serve -a localhost:8088`  
 Open the browser and you will see the documentation site. Chaning any page will automatically refresh the view.
+
+## Github Pages deployment
+
+* Switch into branch containing the version you want to deploy
+* Run `$ mkdocs gh-deploy`
+* Check status of Github deployment action: https://github.com/sorbay/sorbay-documentation/actions
+* Once finished, check the documentation: https://doc.sorbay.com/

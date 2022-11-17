@@ -2,6 +2,7 @@
 /build
 /MANIFEST
 /dist
+/generated
 
 *.log
 

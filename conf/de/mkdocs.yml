@@ -33,7 +33,7 @@ nav:
   - Willkommen: index.md
   - Getting Started:
      - started/index.md
-  - ID light Service:
-     - idlight/index.md
+  - sorbay_ciam:
+     - sorbay_ciam/index.md
   - Hilfe:
       - hilfe/index.md

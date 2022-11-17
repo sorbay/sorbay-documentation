@@ -1,4 +1,4 @@
-site_name: 'Sorbay documentation'
+site_name: 'sorbay documentation'
 docs_dir: '../../docs/en'                           # Where to find the English markdown files
 site_dir: '../../generated/en'                      # Where to put the English HTML files
 

@@ -1,4 +1,4 @@
-# Welcome to Sorbay
+# Welcome to sorbay
 Test
 
 ## Commands

@@ -1,4 +1,4 @@
-site_name: 'Sorbay documentation'
+site_name: 'sorbay documentation'
 docs_dir: './docs/en'                        # Where to find the English markdown files
 site_dir: './generated'                      # Where to put the English HTML files
 site_url: 'https://doc.sorbay.com'
@@ -22,7 +22,7 @@ nav:
   - Workspaces: 'workspaces.md'
   - Services:
     - About: 'services.md'
-    - ID light Service: 'idlight.md'
+    - sorbay_ciam: 'sorbay_ciam.md'
   - Members: 'members.md'
   - Settings: 'settings.md'
   - Help: 'help.md'

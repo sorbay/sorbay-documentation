@@ -15,6 +15,9 @@ extra_css:
 plugins:
   - search:
       lang: en                                      # Set language for search
+  - swagger-ui-tag:
+      supportedSubmitMethods: []
+      validatorUrl: none
 
 nav:
   - Welcome: 'index.md'
@@ -22,7 +25,9 @@ nav:
   - Workspaces: 'workspaces.md'
   - Services:
     - About: 'services.md'
-    - sorbay_ciam: 'sorbay_ciam.md'
+    - sorbay_ciam:
+      - Configuration: 'sorbay_ciam.md'
+      - API: 'sorbay_ciam_api.md'
   - Members: 'members.md'
   - Settings: 'settings.md'
   - Help: 'help.md'

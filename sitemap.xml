@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://doc.sorbay.com/sorbay_ciam_integration/</loc>
+         <lastmod>2022-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://doc.sorbay.com/workspaces/</loc>
          <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>

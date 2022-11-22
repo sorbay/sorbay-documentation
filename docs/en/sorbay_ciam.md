@@ -83,9 +83,7 @@ _This functionality is not yet available during the beta testing phase!_
 
 ### Pages
 
-Following the "Bring your own UI" philosophy, the sorbay_ciam service allows you
-to configure custom frontend URLs here. This could be custom-written 
-JavaScript frontends, that integrate with the service API.
+Following the "Bring your own UI" philosophy, the sorbay_ciam service allows you to configure custom frontend URLs here. This could be custom-written JavaScript frontends, that integrate with the service API. Follow the [instructions](/sorbay_ciam_integration) how to configure and launch our demo UI application.
 
 * "Login URL" - Login application URL
 * "Registration URL" - Registration application URL
@@ -111,7 +109,7 @@ lower right corner to save the new URL.
 
 #### Custom
 
-Finally you may set a custom domain name, and define a custom 
+Finally, you may set a custom domain name, and define a custom 
 domain for the session cookie, depending on your application's requirements.
 
 ### Accounts
@@ -150,4 +148,3 @@ To edit a user account, click the <img src="../img/button_open_details.png" /> s
 To delete a user account, click the "Delete user" option in the pop up menu:
 
 <img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
-

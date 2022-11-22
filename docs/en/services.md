@@ -27,4 +27,4 @@ In order to configure a newly created service, click the "Service settings" butt
 
 This will open the settings page for that service instance, with the "General" tab selected:
 
-<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/service_idlight_settings_general.png">
+<img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/sorbay_ciam_settings_general.png">

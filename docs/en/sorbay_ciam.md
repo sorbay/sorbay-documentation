@@ -1,11 +1,11 @@
-# IDLight Service
+# sorbay_ciam
 
 ## Functionality
 
-The IDLight Service provides user management with authentication and 
+The sorbay_ciam provides user management with authentication and 
 self-service capabilities for end users. The overall strategy is a 
 "Bring your own UI" so you may use the provided API from 
-IDLight to integrate the capabilities in your app.
+sorbay_ciam to integrate the capabilities in your app.
 
 ### Authentication
 
@@ -14,22 +14,22 @@ authentication with the Google Authenticator app (iOS and Android).
 
 ### Self-Service
 
-The IDlight service includes self-service functionality, that allows
+The sorbay_ciam service includes self-service functionality, that allows
 your users to manage their account and profile themselves, such as
 changing the password, changing user attributes or enabling
 two-factor authentication.
 
 ## Configuration
 
-To configure an instance of the IDlight service, click the "Service settings"
+To configure an instance of the sorbay_ciam service, click the "Service settings"
 option in the popup menu of an entry in the services list:
 
 <img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_service_details_popup.png">
 
-You will then be presented with the settings of that instance of the IDlight service.
+You will then be presented with the settings of that instance of the sorbay_ciam service.
 Its functionality is grouped in 4 tabs:
 
-* General - general settings for this IDlight service instance
+* General - general settings for this sorbay_ciam service instance
 * Users - user-related configuration settings
 * Pages - custom UI URL configuration
 * Accounts - management of service user accounts
@@ -39,7 +39,7 @@ Its functionality is grouped in 4 tabs:
 #### Open service UI
 
 At the top, you find the button "Open interfaces" which will open a new
-browser window with the URL of this instance of the IDlight service. What 
+browser window with the URL of this instance of the sorbay_ciam service. What 
 is displayed here exactly, varies if you configure custom UI URLs in the "Pages"
 section.
 
@@ -83,7 +83,7 @@ _This functionality is not yet available during the beta testing phase!_
 
 ### Pages
 
-Following the "Bring your own UI" philosophy, the IDlight service allows you
+Following the "Bring your own UI" philosophy, the sorbay_ciam service allows you
 to configure custom frontend URLs here. This could be custom-written 
 JavaScript frontends, that integrate with the service API.
 

@@ -1,4 +1,4 @@
-site_name: 'Sorbay documentation'
+site_name: 'sorbay documentation'
 docs_dir: './docs/en'                        # Where to find the English markdown files
 site_dir: './generated'                      # Where to put the English HTML files
 site_url: 'https://doc.sorbay.com'
@@ -15,6 +15,9 @@ extra_css:
 plugins:
   - search:
       lang: en                                      # Set language for search
+  - swagger-ui-tag:
+      supportedSubmitMethods: []
+      validatorUrl: none
 
 nav:
   - Welcome: 'index.md'
@@ -22,7 +25,9 @@ nav:
   - Workspaces: 'workspaces.md'
   - Services:
     - About: 'services.md'
-    - ID light Service: 'idlight.md'
+    - sorbay_ciam:
+      - Configuration: 'sorbay_ciam.md'
+      - API: 'sorbay_ciam_api.md'
   - Members: 'members.md'
   - Settings: 'settings.md'
   - Help: 'help.md'

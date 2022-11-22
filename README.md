@@ -1,10 +1,9 @@
-# Sorbay Documentation
+# sorbay documentation
 
 The documentation is based on MkDocs resp. Material for MkDocs as theme.
 
 https://squidfunk.github.io/mkdocs-material/
 https://www.mkdocs.org/
-
 
 ## Installation required development tools
 

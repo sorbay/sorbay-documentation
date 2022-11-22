@@ -1,0 +1,1 @@
+<swagger-ui src="./static/sorbay_ciam_api.json"/>

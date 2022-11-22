@@ -2,42 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://doc.sorbay.com/</loc>
-         <lastmod>2022-10-31</lastmod>
+         <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://doc.sorbay.com/help/</loc>
-         <lastmod>2022-10-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://doc.sorbay.com/idlight/</loc>
-         <lastmod>2022-10-31</lastmod>
+         <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://doc.sorbay.com/members/</loc>
-         <lastmod>2022-10-31</lastmod>
+         <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://doc.sorbay.com/profile/</loc>
-         <lastmod>2022-10-31</lastmod>
+         <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://doc.sorbay.com/services/</loc>
-         <lastmod>2022-10-31</lastmod>
+         <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://doc.sorbay.com/settings/</loc>
-         <lastmod>2022-10-31</lastmod>
+         <lastmod>2022-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://doc.sorbay.com/sorbay_ciam/</loc>
+         <lastmod>2022-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://doc.sorbay.com/sorbay_ciam_api/</loc>
+         <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://doc.sorbay.com/workspaces/</loc>
-         <lastmod>2022-10-31</lastmod>
+         <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -18,6 +18,9 @@ plugins:
   - swagger-ui-tag:
       supportedSubmitMethods: []
       validatorUrl: none
+  - redirects:
+      redirect_maps:
+          'idlight.md': 'sorbay_ciam.md'
 
 nav:
   - Welcome: 'index.md'

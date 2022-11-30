@@ -7,10 +7,35 @@
   font-style: normal;
 }
 
-.md-typeset h1, .md-typeset h2,.md-sidebar,.md-ellipsis {
+@font-face {
+  font-family: "OpenSans";
+  src: local("Open Sans"),
+  url(/assets/fonts/open-sans-v34.woff2) format("woff2"),
+  url(/assets/fonts/open-sans-v34.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DroidSansMono";
+  src: local("Droid Sans Mono"),
+  url(/assets/fonts/droid-sans-mono.regular.woff2) format("woff2"),
+  url(/assets/fonts/droid-sans-mono.regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.md-typeset h1, .md-typeset h2, .md-sidebar, .md-ellipsis {
   font-family: "AvenueMono";
 }
 .md-header {
     color: black;
     background-color: white
+}
+
+:root {
+  --md-text-font: "OpenSans";
+}
+:root {
+  --md-code-font: "DroidSansMono";
 }

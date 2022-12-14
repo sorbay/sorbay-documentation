@@ -112,6 +112,10 @@ lower right corner to save the new URL.
 Finally, you may set a custom domain name, and define a custom 
 domain for the session cookie, depending on your application's requirements.
 
+You will have to create a CNAME record with the DNS provider with which the domain is registered, with the value that's provided in this view.
+
+It is important that you add CORS origins to your custom domain to ensure Single Page Applications (SPAs) support.
+
 ### Accounts
 
 Under this tab, you can manage user accounts for users of the service.

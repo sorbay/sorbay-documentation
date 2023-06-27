@@ -1,6 +1,6 @@
 # sorbay_risk
 
-***TODO risk service*** Adapt texts from ciam...
+<span style="color:red">***TODO risk service:*** Adapt texts from ciam...</span>
 
 ## Functionality
 

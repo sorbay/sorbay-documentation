@@ -1,6 +1,6 @@
 # Integration of a sorbay_risk service
 
-***TODO risk service*** Adapt texts from ciam...
+<span style="color:red">***TODO risk service:*** Adapt texts from ciam...</span>
 
 This guide will show you how to integrate your service into sorbay_ciam using our demo ui application.
 

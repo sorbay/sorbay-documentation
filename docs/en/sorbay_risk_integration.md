@@ -34,7 +34,7 @@ The browser redirects work just for regular browser requests. If you are using a
 **TODO** Sketch: Describe what needs to do on server (generate nonce, http callouts, etc.)
 and what on client (include js, hidden fields, etc., also show the diagram with requests and responses)
 
-Test if mermaid works in here... nope... to be seen if activate it or use image...
+**TODO** adapt flow chart below as needed... (make as general as possible)
 
 ```mermaid
 sequenceDiagram

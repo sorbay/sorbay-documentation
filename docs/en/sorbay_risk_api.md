@@ -1,0 +1,1 @@
+<swagger-ui src="./static/sorbay_risk_api.json"/>

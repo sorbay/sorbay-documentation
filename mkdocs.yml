@@ -32,6 +32,10 @@ nav:
       - Configuration: 'sorbay_ciam.md'
       - Integration: 'sorbay_ciam_integration.md'
       - API: 'sorbay_ciam_api.md'
+    - sorbay_risk:
+      - Configuration: 'sorbay_risk.md'
+      - Integration: 'sorbay_risk_integration.md'
+      - API: 'sorbay_risk_api.md'
   - Members: 'members.md'
   - Settings: 'settings.md'
   - Help: 'help.md'

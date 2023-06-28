@@ -128,7 +128,3 @@ For example, if the risk score is lower than 0.4, a second factor authentication
 Whenever your login service decides that login with that user was successful, your login service makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/loginok` location at the sorbay_risk service to signal that, with the same parameters as for the risk call futher above. Only then does the sorbay_risk service store attributes (partially obfuscated) in its database for future risk score evaluations.
 
 Note that this second REST call is necessary for **security** reasons: An attacker in possession of a valid userid/password pair could get past the password validation, but then fail when asked for a second factor. If those attempts that failed in the end were all stored as successful logins at the sorbay_risk service, after some attempts the risk score would get so low that the login service might no longer ask for a second factor.
-
-
-
-

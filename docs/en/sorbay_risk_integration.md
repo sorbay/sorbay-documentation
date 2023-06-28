@@ -9,16 +9,16 @@ Let's assume that you have already created a sorbay_risk service.
 Navigate to the "Settings" of your service, then go to the "Configuration" tab.
 
 Configure at least one API-key.
-It will be needed in your login service for callouts to the sorbay_risk service.
+It will be needed in your login service for REST calls to the sorbay_risk service.
 
 ## Configure your login service
 
-For simplicity, assume that your login service provides users who want to log in
+For simplicity, let's assume that your login service provides users who want to log in
 with a simple login mask with userid and password fields.
-That may be different in practice, but there should be a means to weakly
-authenticate a userid before using the sorbay_risk service.
+That might of course be different in practice, but there must be a means to weakly
+authenticate a user (resp. its userid) before using the sorbay_risk service.
 
-And assume that the base URL for the sorbay_risk service is https://risk.sorbay.com/myriskservice.
+And let's assume that the base URL for the sorbay_risk service is https://risk.sorbay.com/myriskservice.
 
 <span style="color:red">***TODO***</span> Where would the base URL be obtained from? Shown in the service GUI? Would it be derived from the service name??
 
@@ -37,16 +37,16 @@ client ->> login: GET login page
 login -->> client: login page<br>(with initial js and nonce)
 client ->> risk: GET js for fingerprint etc.
 risk -->> client: js for fingerprint etc.
-client ->> risk: REST call rest/token<br>(client fingerprint + nonce)
+client ->> risk: REST call /rest/token<br>(client fingerprint + nonce)
 risk -->> client: token (opaque)
 client ->> login: Login POST<br>(userid + password + token)
-login ->> risk: REST call rest/risk<br>(userid + token + nonce)
+login ->> risk: REST call /rest/risk<br>(userid + token + nonce)
 risk -->> login: risk score
-login ->> risk: REST call rest/loginok<br>(userid + token + nonce)
+login ->> risk: REST call /rest/loginok<br>(userid + token + nonce)
 ```
 
 1. The user gets to the login location in their browser.
-2. Your login service sends back a login page with fields for userid and password, plus for simplicity here with a hidden field named "token" and the following JavaScript:<br>
+2. Your login service sends back a login page with fields for userid and password, plus a hidden field named "token" and the following JavaScript:<br>
    ```javascript
    <script>
      function sorbayGetSetToken() {

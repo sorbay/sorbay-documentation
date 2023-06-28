@@ -19,8 +19,8 @@ logging in again, and the second factor could be omitted for more
 user convenience and still good security
 (thanks to the additional factors already evaluated in the background).
 Alternatively or additionally, if a risk score was relatively high,
-an email with subject e.g. "login from a new location" could be sent
-to the user.
+your login service might notify the user of a
+"login from a new location", e.g. via email or SMS.
 
 ## Configuration
 

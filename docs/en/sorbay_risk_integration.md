@@ -34,7 +34,7 @@ sequenceDiagram
 autonumber
 
 actor client as client/browser
-participant login as login service
+participant login as your login service
 participant risk as sorbay_risk service
 
 client ->> login: GET login page
@@ -52,13 +52,12 @@ login ->> risk: REST call /rest/loginok<br>(userid + token + nonce)
 #### 1. 🠚 GET login page
 
 A user goes to the login location in their browser/client
-(maybe redirected when trying to access a protected application
-or going directly to the login page).
+(either directly or else maybe redirected when trying to access a protected application).
 
 #### 2. 🠘 Login page (with initial js and nonce)
 
 Your login service sends back a login page with form fields for **userid** and **password**,
-plus a hidden field named **token**, and the following JavaScript (somewhere after the fields):
+plus a hidden field named **token**, and the following JavaScript:
 
 ```javascript
 <script>
@@ -93,41 +92,41 @@ The received JavaScript also runs immediately.
 
 The JavaScript determines the browser/client fingerprint and makes a rest call to the sorbay_risk service at `https://risk.sorbay.com/myriskservice/rest/token`, passing both **fingerprint** and **nonce**.
 
-(Note that the API-key is not used in that callout; usage of the API-key is restricted to your login service, the API-key should never be passed to the client.)
+(Note that the API-key is not used in that callout; usage of the API-key is restricted to your login service, the API-key should never be given/passed to the client.)
 
 #### 6. 🠘 token (opaque)
 
-The sorbay_risk service returns the **token**, which is just an opaque string, to the client. It contains in encrypted and signed form all collected attributes (IP, User-Agent, fingerprint, plus derived attributes like country, etc.) and the nonce for later comparison. It also contains a validity period and a unique id to further prevent replay attacks.
+The sorbay_risk service returns the **token**, which is just an opaque string to the client. It contains in encrypted and signed form all collected attributes (IP, User-Agent, fingerprint, plus derived attributes like country, etc.) and the nonce for later comparison. It also contains a validity period and a unique id to further prevent replay attacks.
 
 In the JavaScript above, the token is written to the hidden **token** field.
 
 #### 7. 🠚 Login POST (userid + password + token)
 
-The user enters userid and password and submits them, posting the login to your login service along with the token.
+The user enters userid and password and submits them, posting them to your login service along with the token.
 
 (Detail: Ideally, the submit button would only become active once the token had been obtained.)
 
 #### 8. 🠚 REST call /rest/risk (userid + token + nonce)
 
-The login service validates userid/password and, if ok, makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/risk` location on the sorbay_risk service, passing **userid**, **nonce** and **token**, plus the **API-key** as `X-API-Key` HTTP request header.
+The login service validates userid/password and, if correct, makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/risk` location on the sorbay_risk service, passing **userid**, **nonce** and **token**, plus the **API-key** as `X-API-Key` HTTP request header.
 
 #### 9. 🠘 risk score
 
 The sorbay_risk service makes various validations, including:
 
 - The API-key must be equal to one of the configured API-keys.
-- Can decipher the token and validate its signature.
-- The token must still be valid (not expired).
+- It can decipher the token and validate its signature.
+- The token must not be expired.
 - The nonce in the token must be equal to the directly posted nonce.
 
 If all validations pass, the sorbay_risk service calculates the risk score and returns it.
-
-#### 10. 🠚 REST call /rest/loginok (userid + token + nonce)
 
 Your login service receives the risk score and is free what to do based on its value.
 
 For example, if the risk score is lower than 0.4, a second factor authentication (SMS, etc.) could be skipped. Or if the risk score is above a certain value, an email could be sent to the user to inform of the login attempt "from a new location".
 
-Whenever your login service decides that login with that user was successful, your login service makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/loginok` location at the sorbay_risk service to signal that, with the same parameters as for the risk call further above. Only then does the sorbay_risk service store attributes (partially hashed with a secret) in its database for future risk score evaluations.
+#### 10. 🠚 REST call /rest/loginok (userid + token + nonce)
 
-Note that this second REST call is necessary for **security** reasons: An attacker in possession of a valid userid/password pair could get past the password validation, but would then fail when asked for a second factor. If such attempts that failed in the end were all stored as successful logins at the sorbay_risk service, after some such attempts the risk score could naturally get low enough that the login service would no longer ask for a second factor.
+Whenever your login service decides that login with that user was successful, your login service makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/loginok` location at the sorbay_risk service to signal that fact to the sorbay_risk service, with the same parameters as for the risk call further above. Only then does the sorbay_risk service store the attributes (partially hashed in special way with a secret for privacy reasons) in its database for future risk score evaluations.
+
+Note that this second REST call is necessary for **security** reasons: An attacker in possession of a valid userid/password pair could get past the password validation, but would then fail when asked for a second factor. If such attempts that failed in the end were all stored as successful logins at the sorbay_risk service, after some such attempts the risk score would naturally get low enough that the login service would no longer ask for a second factor (if configured to skip a second factor based on risk score).

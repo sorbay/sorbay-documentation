@@ -55,7 +55,7 @@ Under "Service deletion", you can delete this service instance entirely.
 and all related data and resources.
 
 Delete the service by clicking the "Delete service" button, and then confirm
-the deletion in the following pop up dialog.
+the deletion in the following pop-up dialog.
 
 ### Users
 
@@ -126,7 +126,7 @@ To create a new service user, click the "+ Create user" button:
 
 <img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_create_user_button.png">
 
-This will open the following pop up dialogue where you can enter the 
+This will open the following pop-up dialogue where you can enter the 
 details of the new user account:
 
 <img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_create_user_popup.png">
@@ -143,12 +143,12 @@ under the "Accounts" tab:
 
 #### Edit user
 
-To edit a user account, click the <img src="../img/button_open_details.png" /> symbol, or the "Open user" option in the pop up menu:
+To edit a user account, click the <img src="../img/button_open_details.png" /> symbol, or the "Open user" option in the pop-up menu:
 
 <img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">
 
 #### Delete user
 
-To delete a user account, click the "Delete user" option in the pop up menu:
+To delete a user account, click the "Delete user" option in the pop-up menu:
 
 <img style="margin-left: 80px; width: 25%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_accounts_open_user_popup.png">

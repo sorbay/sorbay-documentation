@@ -54,8 +54,8 @@ and then confirm the deletion in the following pop-up dialog.
 
 ### Configuration
 
-#### API-Keys
+#### API Keys
 
-In the section "API Keys" one or more API-keys can be defined.
+In the section "API Keys" one or more API keys can be defined.
 You need at least one to use the service, more precisely for the REST APIs of the service.
-The GUI proposes an API-key (a random UUID), but you can change that as desired.
+The GUI proposes an API key (a random UUID), but you can change that as desired.

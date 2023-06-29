@@ -8,7 +8,7 @@ Let's assume that you have already created a sorbay_risk service.
 
 Navigate to the "Settings" of your service, then go to the "Configuration" tab.
 
-Configure at least one API-key.
+Configure at least one API key.
 It will be needed in your login service for REST calls to the sorbay_risk service.
 
 ## Configure your login service
@@ -92,7 +92,7 @@ The received JavaScript also runs immediately.
 
 The JavaScript determines the browser/client fingerprint and makes a rest call to the sorbay_risk service at `https://risk.sorbay.com/myriskservice/rest/token`, passing both **fingerprint** and **nonce**.
 
-(Note that the API-key is not used in that callout; usage of the API-key is restricted to your login service, the API-key should never be given/passed to the client.)
+(Note that the API key is not used in that callout; usage of the API key is restricted to your login service, the API key should never be given/passed to the client.)
 
 #### 6. 🠘 token (opaque)
 
@@ -108,13 +108,13 @@ The user enters userid and password and submits them, posting them to your login
 
 #### 8. 🠚 REST call /rest/risk (userid + token + nonce)
 
-The login service validates userid/password and, if correct, makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/risk` location on the sorbay_risk service, passing **userid**, **nonce** and **token**, plus the **API-key** as `X-API-Key` HTTP request header.
+The login service validates userid/password and, if correct, makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/risk` location on the sorbay_risk service, passing **userid**, **nonce** and **token**, plus the **API key** as `X-API-Key` HTTP request header.
 
 #### 9. 🠘 risk score
 
 The sorbay_risk service makes various validations, including:
 
-- The API-key must be equal to one of the configured API-keys.
+- The API key must be equal to one of the configured API keys.
 - It can decipher the token and validate its signature.
 - The token must not be expired.
 - The nonce in the token must be equal to the directly posted nonce.

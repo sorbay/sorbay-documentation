@@ -30,7 +30,7 @@ To change your password, click the "Change Password" button in the "Password" se
 
 <img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_change_password.png">
 
-This will open a popup dialogue, where you can enter the new password string:
+This will open a popup dialog, where you can enter the new password string:
 
 <img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_change_password_confirm.png">
 
@@ -46,12 +46,12 @@ click on the "Two-Factor Authentication" button, which opens this dialog with a 
 
 Open your Authenticator app on your iOS or Android device, and scan the QR code. This will create
 a new entry in your Authenticator app under the label "sorbay". 
-Then continue to the next dialogue, where you will have to enter the code currently displayed in 
+Then continue to the next dialog, where you will have to enter the code currently displayed in 
 the Authenticator app, to confirm that the QR code was correctly processed:
 
 <img style="margin-left: 80px; width: 55%; border: 1px; border-style: solid; border-color: lightgray" src="../img/profile_totp_verification_code.png">
 
-Finally, another dialogue will provide a download for backup recovery codes, that you can use to 
+Finally, another dialog will provide a download for backup recovery codes, that you can use to 
 recover your account in case your iOS or Android device gets lost, stolen or damaged, and you cannot
 use the Authenticator app anymore.
 

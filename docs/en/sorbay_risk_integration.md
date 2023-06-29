@@ -125,8 +125,18 @@ Your login service receives the risk score and is free what to do based on its v
 
 For example, if the risk score is lower than 0.4, a second factor authentication (SMS, etc.) could be skipped. Or if the risk score is above a certain value, an email could be sent to the user to inform of the login attempt "from a new location".
 
+(The general recommendation is to first operate in mode where the risk score is calculated and logged, but no decisions are made based on it. After gaining some experience with how the risk score behaves in your specific setup and with your specific classes of users and their habits, start implementing different behavior depending on the risk score and maybe other attributes related to the user.)
+
 #### 10. 🠚 REST call /rest/loginok (userid + token + nonce)
 
-Whenever your login service decides that login with that user was successful, your login service makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/loginok` location at the sorbay_risk service to signal that fact to the sorbay_risk service, with the same parameters as for the risk call further above. Only then does the sorbay_risk service store the attributes (partially hashed in special way with a secret for privacy reasons) in its database for future risk score evaluations.
+Whenever your login service decides that login with that user was successful, your login service makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/loginok` location at the sorbay_risk service to signal that to the sorbay_risk service, with the same parameters as for the risk call further above. Only then does the sorbay_risk service store the attributes (partially hashed in special way with a secret for privacy reasons) in its database as the basis for future risk score evaluations.
 
-Note that this second REST call is necessary for **security** reasons: An attacker in possession of a valid userid/password pair could get past the password validation, but would then fail when asked for a second factor. If such attempts that failed in the end were all stored as successful logins at the sorbay_risk service, after some such attempts the risk score would naturally get low enough that the login service would no longer ask for a second factor (if configured to skip a second factor based on risk score).
+Note that this second REST call is necessary for **security** reasons: An attacker in possession of a valid userid/password pair could get past the password validation, but would then fail when asked for a second factor. If such attempts that failed in the end were all stored as successful logins at the sorbay_risk service, after some such attempts the risk score would naturally get low enough that the login service would no longer ask for a second factor (if configured to skip a second factor based on low risk score).
+
+### Risk-Based Authentication
+
+For an overview of Risk-Based Authentication (RBA) see this website, which is mainly research/community driven:
+
+[https://riskbasedauthentication.org/](https://riskbasedauthentication.org/)
+
+The sorbay_risk service is essentially based on the same principles and methods as presented there, with some custom refinements and performance optimizations.

@@ -50,7 +50,7 @@ Under "Service deletion", you can delete this service instance entirely.
 and all related data and resources.
 
 Delete the service by clicking the "Delete service" button,
-and then confirm the deletion in the following pop up dialog.
+and then confirm the deletion in the following pop-up dialog.
 
 ### Configuration
 

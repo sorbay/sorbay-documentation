@@ -116,7 +116,7 @@ The sorbay_risk service makes various validations, including:
 
 - The API key must be equal to one of the configured API keys.
 - It can decipher the token and validate its signature.
-- The token must not be expired.
+- The token must not have expired.
 - The nonce in the token must be equal to the directly posted nonce.
 
 If all validations pass, the sorbay_risk service calculates the risk score and returns it.

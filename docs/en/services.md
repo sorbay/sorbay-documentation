@@ -10,7 +10,7 @@ To create a new service, click the "Create" button in the lower right corner:
 
 <img style="margin-left: 80px; width: 20%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_button_create.png">
 
-A dialogue will pop up with an input field, where you are asked to
+A dialog will pop up with an input field, where you are asked to
 enter the name of the service:
 
 <img style="margin-left: 80px; width: 75%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_create_popup.png">

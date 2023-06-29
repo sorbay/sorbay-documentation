@@ -20,11 +20,11 @@ with a simple login form with userid and password fields, plus has a hidden "tok
 - **password**: Password field
 - **token**: Hidden field
 
-That might of course be different in practice, but what is crucial is that there should be a means to at least weakly authenticate a user (more precisely a userid) before using the sorbay_risk service.
+That might of course be different in practice, but what is crucial is that there should be a means to at least weakly authenticate a user (more precisely the userid) before using the sorbay_risk service.
 
-<span style="color:red">***TODO***</span> Where would the base URL be obtained from? Shown in the service GUI? Would it be derived from the service name, e.g, as imagined below `https://risk.sorbay.com/{service-name}`??
+<span style="color:red">***TODO***</span> Where would the base URL be obtained from? Shown in the service GUI? Would it be derived from the service name, e.g, as assumed below `https://risk.sorbay.com/{service-name}`??
 
-The base URL of the sorbay_risk service depends on the service name, let's assume it is `https://risk.sorbay.com/myriskservice` below.
+The base URL of the sorbay_risk service depends on the service name, let's assume the base URL is `https://risk.sorbay.com/myriskservice` below.
 
 Here is the typical flow of requests and responses in case of a successful login:
 
@@ -52,7 +52,7 @@ login ->> risk: REST call /rest/loginok<br>(userid + token + nonce)
 #### 1. 🠚 GET login page
 
 A user goes to the login location in their browser/client
-(either directly or else maybe redirected when trying to access a protected application).
+(directly or redirected when trying to access a protected application).
 
 #### 2. 🠘 Login page (with initial js and nonce)
 
@@ -77,7 +77,7 @@ plus a hidden field named **token**, and the following JavaScript:
 </script>
 ```
 
-**IMPORTANT**: The **nonce** value must be generated as a hard to guess random string by the login service on the *server side* (***not*** on the browser/client) and must be remembered on the server during the login.
+**IMPORTANT**: The **nonce** value must be generated as a hard-to-guess random string by the login service on the *server side* (***not*** on the browser/client) and must be remembered on the server during the login.
 The nonce is later used to prevent some attacks.
 
 #### 3. 🠚 GET js for fingerprint etc.

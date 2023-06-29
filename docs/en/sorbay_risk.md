@@ -31,7 +31,7 @@ option in the popup menu of an entry in the services list:
 <img style="margin-left: 80px; width: 35%; border: 1px; border-style: solid; border-color: lightgray" src="../img/services_service_details_popup.png">
 
 You will then be presented with the settings of that instance of the sorbay_risk service.
-Its functionality is grouped in the following tabs:
+Its functionality is grouped into the following tabs:
 
 * General - general settings for this service instance
 * Configuration - configuration of this service instance

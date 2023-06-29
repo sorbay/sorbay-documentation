@@ -24,7 +24,7 @@ That might of course be different in practice, but what is crucial is that there
 
 <span style="color:red">***TODO***</span> Where would the base URL be obtained from?<br>
 => could be shown in the service GUI (selectable to copy and/or button to copy to clipboard)<br>
-=> if so, would need to add a description of that field
+=> if so, would need to add documentation for that additional field
 
 The base URL of the sorbay_risk service depends on the service name, let's assume the base URL is `https://risk.sorbay.com/myriskservice` below.
 

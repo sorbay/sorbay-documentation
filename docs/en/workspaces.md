@@ -28,6 +28,6 @@ workspace etc.
 
 On the "Settings" page you can delete the currently selected workspace by clicking
 the "Delete workspace" button in the "Workspace deletion" section of the screen.
-After confirming the deletion by clicking "Yes" in the pop up confirmation dialog,
+After confirming the deletion by clicking "Yes" in the pop-up confirmation dialog,
 the workspace and all associated services and resources will be removed irrevocably.
 

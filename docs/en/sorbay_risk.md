@@ -23,6 +23,12 @@ user convenience and still more security
 your login service might notify the user of a
 "login from a new location", e.g. via email or SMS.
 
+For a general overview of Risk-Based Authentication (RBA) see
+[this website](https://riskbasedauthentication.org/),
+which is mainly research/community driven.
+The sorbay_risk service is essentially based on the same principles
+and methods as presented there, with refinements and optimizations.
+
 ## Configuration
 
 To configure an instance of the sorbay_risk service, click the "Service settings"

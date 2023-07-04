@@ -48,7 +48,10 @@ risk -->> client: token (opaque)
 client ->> login: Login POST<br>(userid + password + token)
 login ->> risk: REST call /rest/risk<br>(userid + token + nonce)
 risk -->> login: risk score
+login -->> client : login ok or require<br>further authentication
+login --> client : (opt. further authentication)
 login ->> risk: REST call /rest/loginok<br>(userid + token + nonce)
+risk -->> login: ok
 ```
 
 #### 1. 🠚 GET login page
@@ -129,8 +132,18 @@ For example, if the risk score is lower than 0.4, a second factor authentication
 
 (The general recommendation is to first operate in mode where the risk score is calculated and logged, but no decisions are made based on it. After gaining some experience with how the risk score behaves in your specific setup and with your specific classes of users and their habits, start implementing different behavior depending on the risk score and maybe other attributes related to the user.)
 
-#### 10. 🠚 REST call /rest/loginok (userid + token + nonce)
+#### 10. 🠘 login ok or require further authentication
+
+You login service logs in the user if the risk score was deemed low enough, otherwise initiates further authentication.
+
+#### 11. (opt. further authentication)
+
+Optionally further authentication steps between client and your login service.
+
+#### 12. 🠚 REST call /rest/loginok (userid + token + nonce)
 
 Whenever your login service decides that login with that user was successful, your login service makes a REST call to the `https://risk.sorbay.com/myriskservice/rest/loginok` location at the sorbay_risk service to signal that to the sorbay_risk service, with the same parameters as for the risk call further above. Only then does the sorbay_risk service store the attributes (partially hashed in special way with a secret for privacy reasons) in its database as the basis for future risk score evaluations.
 
-Note that this second REST call is necessary for **security** reasons: An attacker in possession of a valid userid/password pair could get past the password validation, but would then fail when asked for a second factor. If such attempts that failed in the end were all stored as successful logins at the sorbay_risk service, after some such attempts the risk score would naturally get low enough that the login service would no longer ask for a second factor (if configured to skip a second factor based on low risk score).
+#### 13. 🠘 ok
+
+The sorbay_risk service confirms that it successfully recorded the login as successful.

@@ -46,6 +46,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://doc.sorbay.com/sorbay_risk/</loc>
+         <lastmod>2023-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://doc.sorbay.com/sorbay_risk_api/</loc>
+         <lastmod>2023-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://doc.sorbay.com/sorbay_risk_integration/</loc>
+         <lastmod>2023-07-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://doc.sorbay.com/workspaces/</loc>
          <lastmod>2023-07-11</lastmod>
          <changefreq>daily</changefreq>

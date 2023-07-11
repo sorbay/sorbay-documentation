@@ -183,6 +183,36 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3">
+          sorbay_risk
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="sorbay_risk" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+          sorbay_risk
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sorbay_risk/">
+        Configuration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sorbay_risk_integration/">
+        Integration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sorbay_risk_api/">
+        API
+      </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -267,11 +297,11 @@
 * Define the environment variable VERIFICATION_URI for post-verification redirection.
 * Define the environment variable LOGOUT_URI for post-logout redirection.</your-domain></your-landing-page></p>
 <p>To run the container use the following command:</p>
-<pre><code class="language-bash">docker run --rm --name &lt;container-name&gt; -e HOST_NAME="&lt;your-service&gt;.&lt;your-domain&gt;" -e API_URI="&lt;your-domain&gt;" -p &lt;host-port&gt;:8443 -v &lt;absolute-path-to-certificate&gt;:/etc/nginx/certs/ssl.crt -v &lt;absolute-path-to-private-key&gt;:/etc/nginx/certs/ssl.key quay.io/usp/sorbay-ciam-self-service:&lt;version&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--name<span class="w"> </span>&lt;container-name&gt;<span class="w"> </span>-e<span class="w"> </span><span class="nv">HOST_NAME</span><span class="o">=</span><span class="s2">"&lt;your-service&gt;.&lt;your-domain&gt;"</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">API_URI</span><span class="o">=</span><span class="s2">"&lt;your-domain&gt;"</span><span class="w"> </span>-p<span class="w"> </span>&lt;host-port&gt;:8443<span class="w"> </span>-v<span class="w"> </span>&lt;absolute-path-to-certificate&gt;:/etc/nginx/certs/ssl.crt<span class="w"> </span>-v<span class="w"> </span>&lt;absolute-path-to-private-key&gt;:/etc/nginx/certs/ssl.key<span class="w"> </span>quay.io/usp/sorbay-ciam-self-service:&lt;version&gt;
+</code></pre></div>
 <p>This is a concrete example according to the settings above. Ensure you provide the server certificate and private key for the demo application.</p>
-<pre><code class="language-bash">docker run --rm --name sorbay_ciam_demo -e HOST_NAME="customer-app.my-ciam-service.example.org" -v /location/to/my-ciam-service.key:/etc/nginx/certs/ssl.key -v /location/to/my-ciam-service.crt:/etc/nginx/certs/ssl.crt -e API_URI="https://my-ciam-service.example.org" -p 4200:8443 quay.io/usp/sorbay-ciam-self-service:1.0.0
-</code></pre>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--name<span class="w"> </span>sorbay_ciam_demo<span class="w"> </span>-e<span class="w"> </span><span class="nv">HOST_NAME</span><span class="o">=</span><span class="s2">"customer-app.my-ciam-service.example.org"</span><span class="w"> </span>-v<span class="w"> </span>/location/to/my-ciam-service.key:/etc/nginx/certs/ssl.key<span class="w"> </span>-v<span class="w"> </span>/location/to/my-ciam-service.crt:/etc/nginx/certs/ssl.crt<span class="w"> </span>-e<span class="w"> </span><span class="nv">API_URI</span><span class="o">=</span><span class="s2">"https://my-ciam-service.example.org"</span><span class="w"> </span>-p<span class="w"> </span><span class="m">4200</span>:8443<span class="w"> </span>quay.io/usp/sorbay-ciam-self-service:1.0.0
+</code></pre></div>
 </article>
 </div>
 </div>

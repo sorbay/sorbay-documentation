@@ -9,11 +9,7 @@ https://www.mkdocs.org/
 
 You need python 3.x installed and pip package manager!
 
-Install older version of Markdown package, as the latest one is not compatible with the defined versions of the mkdocs dependency:
-
-    pip install Markdown==3.3.7
-
-Install other dependencies:
+Install required mkdocs modules:
 
     pip install mkdocs-material mkdocs-swagger-ui-tag mkdocs-redirects
 

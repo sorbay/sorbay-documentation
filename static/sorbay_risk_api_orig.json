@@ -2,7 +2,7 @@
   "openapi" : "3.0.3",
   "info" : {
     "title" : "sorbay-risk-service API",
-    "version" : "1.0.0-SNAPSHOT"
+    "version" : "DEVELOPMENT-SNAPSHOT"
   },
   "paths" : {
     "/rest/loginok" : {
@@ -26,9 +26,6 @@
                   },
                   "token" : {
                     "type" : "string"
-                  },
-                  "nonce" : {
-                    "type" : "string"
                   }
                 }
               }
@@ -50,9 +47,7 @@
             "description" : "OK",
             "content" : {
               "application/json" : {
-                "schema" : {
-                  "type" : "object"
-                }
+                "schema" : { }
               }
             }
           }
@@ -79,9 +74,6 @@
                     "type" : "string"
                   },
                   "token" : {
-                    "type" : "string"
-                  },
-                  "nonce" : {
                     "type" : "string"
                   }
                 }
@@ -121,9 +113,6 @@
                 "properties" : {
                   "fp" : {
                     "type" : "string"
-                  },
-                  "nonce" : {
-                    "type" : "string"
                   }
                 }
               }
@@ -162,6 +151,13 @@
             "type" : "string"
           }
         }
+      }
+    },
+    "securitySchemes" : {
+      "SecurityScheme" : {
+        "type" : "http",
+        "description" : "Authentication",
+        "scheme" : "basic"
       }
     }
   }

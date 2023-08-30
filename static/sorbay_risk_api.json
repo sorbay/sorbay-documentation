@@ -26,9 +26,6 @@
                   },
                   "token" : {
                     "type" : "string"
-                  },
-                  "nonce" : {
-                    "type" : "string"
                   }
                 }
               }
@@ -80,9 +77,6 @@
                   },
                   "token" : {
                     "type" : "string"
-                  },
-                  "nonce" : {
-                    "type" : "string"
                   }
                 }
               }
@@ -120,9 +114,6 @@
                 "type" : "object",
                 "properties" : {
                   "fp" : {
-                    "type" : "string"
-                  },
-                  "nonce" : {
                     "type" : "string"
                   }
                 }

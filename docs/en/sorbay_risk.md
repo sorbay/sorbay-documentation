@@ -17,7 +17,7 @@ organizations can not only minimize the risk of unauthorized access, but also
 comply with regulatory requirements. This leads to an improved user experience
 and engagement by ensuring a secure and optimized digital interaction.
 
-<img style="margin-left: 5px; border: 0px;" src="../img/sorbay_risk_flow_diagramm_en.jpg">
+<img style="margin-left: 5px; border: 0px;" src="../img/sorbay_risk_flow_diagramm_en.png">
 
 With sorbay_risk, a login service can dynamically select the optimal
 authentication mechanism. The login service used, such as the

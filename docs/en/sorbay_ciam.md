@@ -83,7 +83,7 @@ _This functionality is not yet available during the beta testing phase!_
 
 ### Pages
 
-Following the "Bring your own UI" philosophy, the sorbay_ciam service allows you to configure custom frontend URLs here. This could be custom-written JavaScript frontends, that integrate with the service API. Follow the [instructions](/sorbay_ciam_integration) how to configure and launch our demo UI application.
+Following the "Bring your own UI" philosophy, the sorbay_ciam service allows you to configure custom frontend URLs here. This could be custom-written JavaScript frontends, that integrate with the service API. Follow the [instructions](sorbay_ciam_integration.md) how to configure and launch our demo UI application.
 
 * "Login URL" - Login application URL
 * "Registration URL" - Registration application URL

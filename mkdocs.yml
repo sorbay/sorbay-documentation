@@ -22,6 +22,12 @@ plugins:
       redirect_maps:
           'idlight.md': 'sorbay_ciam.md'
 
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Welcome: 'index.md'
   - Profile: 'profile.md'
@@ -32,6 +38,11 @@ nav:
       - Configuration: 'sorbay_ciam.md'
       - Integration: 'sorbay_ciam_integration.md'
       - API: 'sorbay_ciam_api.md'
+    - sorbay_risk:
+      - Overview: 'sorbay_risk.md'
+      - Configuration: 'sorbay_risk_configuration.md'
+      - Integration: 'sorbay_risk_integration.md'
+      - API: 'sorbay_risk_api.md'
   - Members: 'members.md'
   - Settings: 'settings.md'
   - Help: 'help.md'

@@ -1,0 +1,159 @@
+{
+  "openapi" : "3.0.3",
+  "info" : {
+    "title" : "sorbay_risk",
+    "version" : "1.0.0"
+  },
+  "paths" : {
+    "/rest/loginok" : {
+      "post" : {
+        "tags" : [ "Rest Endpoint" ],
+        "parameters" : [ {
+          "name" : "X-API-Key",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "userid" : {
+                    "type" : "string"
+                  },
+                  "token" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Created"
+          }
+        }
+      }
+    },
+    "/rest/ping" : {
+      "get" : {
+        "tags" : [ "Rest Endpoint" ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/risk" : {
+      "post" : {
+        "tags" : [ "Rest Endpoint" ],
+        "parameters" : [ {
+          "name" : "X-API-Key",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "userid" : {
+                    "type" : "string"
+                  },
+                  "token" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RiskScore"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/token" : {
+      "post" : {
+        "tags" : [ "Rest Endpoint" ],
+        "parameters" : [ {
+          "name" : "User-Agent",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/x-www-form-urlencoded" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "fp" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Token"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "RiskScore" : {
+        "type" : "object",
+        "properties" : {
+          "risk" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Token" : {
+        "type" : "object",
+        "properties" : {
+          "token" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}

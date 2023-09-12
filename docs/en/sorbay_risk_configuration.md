@@ -36,3 +36,8 @@ To access the REST API of the service an API key is required.
 You must define or generate at least one for proper functionality.
 
 It's possible to define more than one API key so that you can rotate them regularly.
+
+#### CORS
+
+In this section you should define allowed Origin URLs for the Cross-origin resource sharing (CORS) mechanism.
+Usually these are the URL(s) of your login server(s).

@@ -347,10 +347,10 @@ participant risk as sorbay_risk service
 
 client -&gt;&gt; login: GET login page
 login --&gt;&gt; client: login page&lt;br&gt;(with initial js)
-client -&gt;&gt; risk: GET js for fingerprint etc.
-risk --&gt;&gt; client: js for fingerprint etc.
-client -&gt;&gt; risk: REST call /rest/token&lt;br&gt;(client fingerprint)
-risk --&gt;&gt; client: token (opaque)
+client -&gt;&gt; risk: GET js for client
+risk --&gt;&gt; client: js for client
+client -&gt;&gt; risk: js opens WebSocket at /token
+risk --&gt;&gt; client: token via websocket (opaque)
 client -&gt;&gt; login: Login POST&lt;br&gt;(userid + password + token)
 login -&gt;&gt; risk: REST call /rest/risk&lt;br&gt;(userid + token)
 risk --&gt;&gt; login: risk score
@@ -365,29 +365,30 @@ risk --&gt;&gt; login: ok</code></pre>
 <p>Your login service sends back a login page with form fields for <strong>userid</strong> and <strong>password</strong>,
 plus a hidden field named <strong>token</strong>, and the following JavaScript:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">sorbaySetTokenInForm</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'setting token in form to: '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">token</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'token'</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">token</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">sorbayGetSetToken</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">baseUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'https://riskid.cloud.sorbay.com'</span><span class="p">;</span>
 <span class="w">    </span><span class="k">import</span><span class="p">(</span><span class="nx">baseUrl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'/resources/sorbay-risk.min.js'</span><span class="p">)</span>
 <span class="w">      </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'client-error: import '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">baseUrl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'/resources/sorbay-risk.min.js failed: '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">);</span><span class="w"> </span><span class="p">})</span>
-<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">js</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">js</span><span class="p">.</span><span class="nx">sorbayGetToken</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">))</span>
-<span class="w">      </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">'client-error: '</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'client-error: sorbayGetToken() failed: '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">)</span>
-<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">token</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'setting token in form to: '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">token</span><span class="p">);</span>
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'token'</span><span class="p">).</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">token</span><span class="p">;</span>
-<span class="w">      </span><span class="p">});</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">js</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">js</span><span class="p">.</span><span class="nx">sorbayGetToken</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span><span class="w"> </span><span class="nx">sorbaySetTokenInForm</span><span class="p">))</span>
+<span class="w">      </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">'client-error: '</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'client-error: sorbayGetToken() failed: '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="w">  </span><span class="nx">sorbayGetSetToken</span><span class="p">();</span>
 <span class="o">&lt;</span><span class="err">/script&gt;</span>
 </code></pre></div>
-<p><strong>3. GET js for fingerprint etc.</strong></p>
-<p>The above JavaScript is run immediately (while the user is free to enter username and password in parallel). It fetches further JavaScript from the sorbay_risk service in order to calculate a browser/client fingerprint.</p>
-<p><strong>4. js for fingerprint etc.</strong></p>
+<p><strong>3. GET js for client</strong></p>
+<p>The above JavaScript is run immediately (while the user is free to enter username and password in parallel). It fetches further JavaScript from the sorbay_risk service in order to collect/measure client attributes.</p>
+<p><strong>4. js for client</strong></p>
 <p>The received JavaScript also runs immediately.</p>
-<p><strong>5. REST call /rest/token (client fingerprint)</strong></p>
-<p>The JavaScript determines the browser/client fingerprint and makes a rest call to the sorbay_risk service at <code>https://riskid.cloud.sorbay.com/rest/token</code>, passing the <strong>fingerprint</strong>.</p>
-<p>Note: The API key is not used in that callout; usage of the API key is restricted to your login service, the API key should never be given/passed to the client.</p>
+<p><strong>5. js opens WebSocket at /token</strong></p>
+<p>The JavaScript opens a WebSocket to <code>wss://riskid.cloud.sorbay.com/token</code>.</p>
+<p>Note: The API key is not used here. Usage of the API key is restricted to the REST calls of your login service described further below. The API key should never be given/passed to the client.</p>
 <p><strong>6. token (opaque)</strong></p>
-<p>The sorbay_risk service returns the opaque <strong>token</strong>. The token is required to calculate the final
+<p>Within the websocket channel additional client attributes are determined. As last action before closing the websocket
+connection, the sorbay_risk service returns the opaque <strong>token</strong>. The token is required to calculate the final
 risk score in the next steps. The token is only valid for a certain period of time and can be used only once
 to prevent e.g. replay attacks.</p>
 <p>In the JavaScript above, the token is written to the hidden <strong>token</strong> field.</p>
@@ -411,7 +412,7 @@ prevent legitimate user from accessing your service.</p>
 <p><strong>12. REST call /rest/loginok (userid + token)</strong></p>
 <p>Whenever your login service decides that login with that user was successful, your login service must make a REST call
 to <code>https://riskid.cloud.sorbay.com/rest/loginok</code> to signal that to the sorbay_risk service.
-Only then does the sorbay_risk service stores the gathered attributes from the latest login attempt in its datastore
+Only then does the sorbay_risk service store the gathered attributes from the latest login attempt in its datastore
 for future risk score evaluations.</p>
 <p><strong>13. ok</strong></p>
 <p>The sorbay_risk service confirms that it successfully recorded the login attributes.</p>

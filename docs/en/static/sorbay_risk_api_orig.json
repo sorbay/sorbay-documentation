@@ -94,44 +94,6 @@
           }
         }
       }
-    },
-    "/rest/token" : {
-      "post" : {
-        "tags" : [ "Rest Endpoint" ],
-        "parameters" : [ {
-          "name" : "User-Agent",
-          "in" : "header",
-          "schema" : {
-            "type" : "string"
-          }
-        } ],
-        "requestBody" : {
-          "content" : {
-            "application/x-www-form-urlencoded" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "fp" : {
-                    "type" : "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Token"
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components" : {
@@ -140,14 +102,6 @@
         "type" : "object",
         "properties" : {
           "risk" : {
-            "type" : "string"
-          }
-        }
-      },
-      "Token" : {
-        "type" : "object",
-        "properties" : {
-          "token" : {
             "type" : "string"
           }
         }

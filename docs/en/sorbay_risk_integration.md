@@ -44,10 +44,10 @@ participant risk as sorbay_risk service
 
 client ->> login: GET login page
 login -->> client: login page<br>(with initial js)
-client ->> risk: GET js for fingerprint etc.
-risk -->> client: js for fingerprint etc.
-client ->> risk: REST call /rest/token<br>(client fingerprint)
-risk -->> client: token (opaque)
+client ->> risk: GET js for client
+risk -->> client: js for client
+client ->> risk: js opens WebSocket at /token
+risk -->> client: token via websocket (opaque)
 client ->> login: Login POST<br>(userid + password + token)
 login ->> risk: REST call /rest/risk<br>(userid + token)
 risk -->> login: risk score
@@ -69,38 +69,39 @@ plus a hidden field named **token**, and the following JavaScript:
 
 ```javascript
 <script>
+  function sorbaySetTokenInForm(token) {
+    console.log('setting token in form to: ' + token);
+    document.getElementById('token').value = token;
+  }
   function sorbayGetSetToken() {
     const baseUrl = 'https://riskid.cloud.sorbay.com';
     import(baseUrl + '/resources/sorbay-risk.min.js')
       .catch(e => { throw new Error('client-error: import ' + baseUrl + '/resources/sorbay-risk.min.js failed: ' + e); })
-      .then(js => js.sorbayGetToken(baseUrl))
-      .catch(e => e.message.startsWith('client-error: ') ? e.message : 'client-error: sorbayGetToken() failed: ' + e)
-      .then(token => {
-        console.log('setting token in form to: ' + token);
-        document.getElementById('token').value = token;
-      });
+      .then(js => js.sorbayGetToken(baseUrl, sorbaySetTokenInForm))
+      .catch(e => e.message.startsWith('client-error: ') ? e.message : 'client-error: sorbayGetToken() failed: ' + e);
   }
   sorbayGetSetToken();
 </script>
 ```
 
-**3. GET js for fingerprint etc.**
+**3. GET js for client**
 
-The above JavaScript is run immediately (while the user is free to enter username and password in parallel). It fetches further JavaScript from the sorbay_risk service in order to calculate a browser/client fingerprint.
+The above JavaScript is run immediately (while the user is free to enter username and password in parallel). It fetches further JavaScript from the sorbay_risk service in order to collect/measure client attributes.
 
-**4. js for fingerprint etc.**
+**4. js for client**
 
 The received JavaScript also runs immediately.
 
-**5. REST call /rest/token (client fingerprint)**
+**5. js opens WebSocket at /token**
 
-The JavaScript determines the browser/client fingerprint and makes a rest call to the sorbay_risk service at `https://riskid.cloud.sorbay.com/rest/token`, passing the **fingerprint**.
+The JavaScript opens a WebSocket to `wss://riskid.cloud.sorbay.com/token`.
 
-Note: The API key is not used in that callout; usage of the API key is restricted to your login service, the API key should never be given/passed to the client.
+Note: The API key is not used here. Usage of the API key is restricted to the REST calls of your login service described further below. The API key should never be given/passed to the client.
 
 **6. token (opaque)**
 
-The sorbay_risk service returns the opaque **token**. The token is required to calculate the final
+Within the websocket channel additional client attributes are determined. As last action before closing the websocket
+connection, the sorbay_risk service returns the opaque **token**. The token is required to calculate the final
 risk score in the next steps. The token is only valid for a certain period of time and can be used only once
 to prevent e.g. replay attacks.
 
@@ -141,7 +142,7 @@ Optionally further authentication steps between client and your login service.
 
 Whenever your login service decides that login with that user was successful, your login service must make a REST call
 to `https://riskid.cloud.sorbay.com/rest/loginok` to signal that to the sorbay_risk service.
-Only then does the sorbay_risk service stores the gathered attributes from the latest login attempt in its datastore
+Only then does the sorbay_risk service store the gathered attributes from the latest login attempt in its datastore
 for future risk score evaluations.
 
 **13. ok**

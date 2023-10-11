@@ -36,3 +36,13 @@ To access the REST API of the service an API key is required.
 You must define or generate at least one for proper functionality.
 
 It's possible to define more than one API key so that you can rotate them regularly.
+
+#### CORS
+
+Only JavaScript served by the login service should be allowed to call the risk service,
+which is achieved via standard Cross-Origin Resource Sharing (CORS) headers
+that are automatically sent by web browsers.
+
+Define the allowed origin URL(s) of the login service,
+i.e. the URL(s) at the login service that are allowed
+to serve JavaScript that then calls the risk service.

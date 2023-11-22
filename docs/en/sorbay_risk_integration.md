@@ -118,13 +118,14 @@ Ideally, the submit button would only become active once the token had been obta
 The login service validates userid/password and, if correct, makes a REST call to the `https://riskid.cloud.sorbay.com/rest/risk`
 location on the sorbay_risk service, passing an HMAC of the **userid** and the **token**, plus the **API key** as `X-API-Key` HTTP request header.
 
-Note: The HMAC of the userid should use a cryptographically strong secret key
-that is never given to the risk service nor to anyone else,
+Note: The HMAC of the userid (use e.g. HMAC-SHA256)
+should use a cryptographically strong secret key
+that is never given to the risk service nor to anyone else, 
 in particular it should be a secret that is completely independent
 of the API key.
 The HMAC is sent base64-, base64url- or hex-encoded to the risk service.
 Do not salt: The same userid must always result in the same HMAC.
-(Technically, if calculating an HMAC or a simpler keyed hash is not possible
+(Technically, if calculating an HMAC or a simpler keyed hash was not possible
 on the login service, the base64(url)- or hex-encoded plain userid could be
 passed to the risk service instead, but this is discouraged because the HMAC
 helps to prevent some advanced attacks on security and privacy of user accounts.)

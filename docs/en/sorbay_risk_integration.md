@@ -125,7 +125,7 @@ in particular it should be a secret that is completely independent
 of the API key.
 The HMAC is sent base64-, base64url- or hex-encoded to the risk service.
 Do not salt: The same userid must always result in the same HMAC.
-(Technically, if calculating an HMAC or a simpler keyed hash was not possible
+(Technically, if calculating an HMAC or a similar keyed hash was not possible
 on the login service, the base64(url)- or hex-encoded plain userid could be
 passed to the risk service instead, but this is discouraged because the HMAC
 helps to prevent some advanced attacks on security and privacy of user accounts.)

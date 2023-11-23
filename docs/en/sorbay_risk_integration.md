@@ -48,12 +48,12 @@ client ->> risk: GET js for client
 risk -->> client: js for client
 client ->> risk: js opens WebSocket at /token
 risk -->> client: token via websocket (opaque)
-client ->> login: Login POST<br>(userid + password + token)
-login ->> risk: REST call /rest/risk<br>(userid HMAC + token)
+client ->> login: Login POST<br>(login userid + password + token)
+login ->> risk: REST call /rest/risk<br>(opaque userid + token)
 risk -->> login: risk score
 login -->> client : login ok or require<br>further authentication
 login --> client : (opt. further authentication)
-login ->> risk: REST call /rest/loginok<br>(userid HMAC + token)
+login ->> risk: REST call /rest/loginok<br>(opaque userid + token)
 risk -->> login: ok
 ```
 
@@ -107,28 +107,25 @@ to prevent e.g. replay attacks.
 
 In the JavaScript above, the token is written to the hidden **token** field.
 
-**7. Login POST (userid + password + token)**
+**7. Login POST (login userid + password + token)**
 
-The user enters userid and password and submits them, posting them to your login service along with the token.
+The user enters login userid and password and submits them, posting them to your login service along with the token.
 
 Ideally, the submit button would only become active once the token had been obtained.
 
-**8. REST call /rest/risk (userid HMAC + token)**
+**8. REST call /rest/risk (opaque userid + token)**
 
 The login service validates userid/password and, if correct, makes a REST call to the `https://riskid.cloud.sorbay.com/rest/risk`
-location on the sorbay_risk service, passing an HMAC of the **userid** and the **token**, plus the **API key** as `X-API-Key` HTTP request header.
+location on the sorbay_risk service, passing an opaque* **userid** and the **token**, plus the **API key** as `X-API-Key` HTTP request header.
 
-Note: The HMAC of the userid (use e.g. HMAC-SHA256)
-should use a cryptographically strong secret key
-that is never given to the risk service nor to anyone else, 
-in particular it should be a secret that is completely independent
-of the API key.
-The HMAC is sent base64-, base64url- or hex-encoded to the risk service.
-Do not salt: The same userid must always result in the same HMAC.
-(Technically, if calculating an HMAC or a similar keyed hash was not possible
-on the login service, the base64(url)- or hex-encoded plain userid could be
-passed to the risk service instead, but this is discouraged because the HMAC
-helps to prevent some advanced attacks on security and privacy of user accounts.)
+&#42; The opaque userid should be unique and unchanging per user,
+but it should not be possible to derive it from login userid and/or API-Key.
+Formally, the opaque userid is limited to max 128 characters,
+where upper and lower case letters and numbers are allowed, as well as '+/=-_',
+i.e. covers hex-, base64- and base64url-encodings.
+Technical approaches for the opaque userid include a randomly generated userid
+that is stored along other user data somewhere where only the login service has access,
+or an HMAC based on a secret key that only the login service knows.
 
 **9. risk score**
 
@@ -150,7 +147,7 @@ Your login service grants access to the user if the risk score was deemed low en
 
 Optionally further authentication steps between client and your login service.
 
-**12. REST call /rest/loginok (userid + token)**
+**12. REST call /rest/loginok (opaque userid + token)**
 
 Whenever your login service decides that login with that user was successful, your login service must make a REST call
 to `https://riskid.cloud.sorbay.com/rest/loginok` to signal that to the sorbay_risk service.

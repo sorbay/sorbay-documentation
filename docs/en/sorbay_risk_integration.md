@@ -123,9 +123,11 @@ but it should not be possible to derive it from login userid and/or API-Key.
 Formally, the opaque userid is limited to max 128 characters,
 where upper and lower case letters and numbers are allowed, as well as '+/=-_',
 i.e. covers hex-, base64- and base64url-encodings.
-Technical approaches for the opaque userid include a randomly generated userid
-that is stored along other user data somewhere where only the login service has access,
-or an HMAC based on a secret key that only the login service knows.
+Technical approaches for the opaque userid would include
+a randomly generated userid  that is stored along other user data
+somewhere where only the login service has access,
+or an HMAC based on a secret key
+that only the login service knows.
 
 **9. risk score**
 

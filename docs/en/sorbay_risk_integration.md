@@ -116,18 +116,18 @@ Ideally, the submit button would only become active once the token had been obta
 **8. REST call /rest/risk (opaque userid + token)**
 
 The login service validates userid/password and, if correct, makes a REST call to the `https://riskid.cloud.sorbay.com/rest/risk`
-location on the sorbay_risk service, passing an opaque* **userid** and the **token**, plus the **API key** as `X-API-Key` HTTP request header.
+location on the sorbay_risk service, passing an **opaque userid** and the **token**, plus the **API key** as `X-API-Key` HTTP request header.
 
-&#42; The opaque userid should be unique and unchanging per user,
-but it should not be possible to derive it from login userid and/or API-Key.
-Formally, the opaque userid is limited to max 128 characters,
-where upper and lower case letters and numbers are allowed, as well as '+/=-_',
-i.e. covers hex-, base64- and base64url-encodings.
-Technical approaches for the opaque userid would include
-a randomly generated userid  that is stored along other user data
-somewhere where only the login service has access,
-or an HMAC based on a secret key
-that only the login service knows.
+!!! info "opaque userid"
+    The opaque userid should be unique and unchanging per user,
+    but it should not be possible to derive it from login userid and/or API-Key.
+    Formally, the opaque userid is limited to max 128 characters,
+    where upper and lower case letters and numbers are allowed, as well as '+/=-_',
+    i.e. covers hex-, base64- and base64url-encodings.
+    Technical approaches for the opaque userid would include
+    a randomly generated userid  that is stored along other user data
+    somewhere where only the login service has access,
+    or an HMAC based on a secret key that only the login service knows.
 
 **9. risk score**
 

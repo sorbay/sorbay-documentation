@@ -2,7 +2,7 @@
   "openapi" : "3.0.3",
   "info" : {
     "title" : "sorbay-risk-service API",
-    "version" : "DEVELOPMENT-SNAPSHOT"
+    "version" : "1.0.0"
   },
   "paths" : {
     "/rest/loginok" : {

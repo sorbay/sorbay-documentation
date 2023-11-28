@@ -28,6 +28,7 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
 nav:
   - Welcome: 'index.md'
   - Profile: 'profile.md'

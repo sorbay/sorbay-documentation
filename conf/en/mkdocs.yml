@@ -28,6 +28,7 @@ extra:                                              # Language Selection
 plugins:
   - search:
       lang: en                                      # Set language for search
+  - inline-svg
 
 nav:
   - Welcome: index.md

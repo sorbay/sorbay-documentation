@@ -11,7 +11,7 @@ You need python 3.x installed and pip package manager!
 
 Install required mkdocs modules:
 
-    pip install mkdocs-material mkdocs-swagger-ui-tag mkdocs-redirects
+    pip install mkdocs-material mkdocs-swagger-ui-tag mkdocs-redirects mkdocs-plugin-inline-svg
 
 You might want to add the installation folder to your path variable, so you can execute the commands without defining the file location path.
 Add `export PATH=$PATH:$HOME/.local/bin` to your `.bashrc` file.

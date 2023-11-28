@@ -29,9 +29,12 @@ factor. sorbay_risk thus forms the solid basis for risk-based authentication (RB
 ### How does it work?
 
 sorbay_risk uses various contextual data from past user logins as well
-as the current login attempt. Using risk-based authenticators and self-learning
-risk engines, sorbay_risk calculates a trust score. By evaluating the risk score,
-sorbay_risk assesses the security of the correct user identity.
+as the current login attempt. One example of contextual data is the IP address,
+which we enrich with attributes from [![IPInfo.io Logo](img/logo-ipinfo.svg){: style="translate: 0px 9px;margin-top: -9px;"}](https://ipinfo.io/).
+
+Using risk-based authenticators and self-learning risk engines, sorbay_risk calculates
+a trust score. By evaluating the risk score, sorbay_risk assesses the security of
+the correct user identity.
 
 The calculated risk score puts out a number between 0 for virtually no risk
 and infinity for maximum risk. The organization decides how to handle the

@@ -351,12 +351,12 @@ client -&gt;&gt; risk: GET js for client
 risk --&gt;&gt; client: js for client
 client -&gt;&gt; risk: js opens WebSocket at /token
 risk --&gt;&gt; client: token via websocket (opaque)
-client -&gt;&gt; login: Login POST&lt;br&gt;(userid + password + token)
-login -&gt;&gt; risk: REST call /rest/risk&lt;br&gt;(userid + token)
+client -&gt;&gt; login: Login POST&lt;br&gt;(login userid + password + token)
+login -&gt;&gt; risk: REST call /rest/risk&lt;br&gt;(opaque userid + token)
 risk --&gt;&gt; login: risk score
 login --&gt;&gt; client : login ok or require&lt;br&gt;further authentication
 login --&gt; client : (opt. further authentication)
-login -&gt;&gt; risk: REST call /rest/loginok&lt;br&gt;(userid + token)
+login -&gt;&gt; risk: REST call /rest/loginok&lt;br&gt;(opaque userid + token)
 risk --&gt;&gt; login: ok</code></pre>
 <p><strong>1. GET login page</strong></p>
 <p>A user goes to the login location in their browser/client
@@ -392,12 +392,24 @@ connection, the sorbay_risk service returns the opaque <strong>token</strong>. T
 risk score in the next steps. The token is only valid for a certain period of time and can be used only once
 to prevent e.g. replay attacks.</p>
 <p>In the JavaScript above, the token is written to the hidden <strong>token</strong> field.</p>
-<p><strong>7. Login POST (userid + password + token)</strong></p>
-<p>The user enters userid and password and submits them, posting them to your login service along with the token.</p>
+<p><strong>7. Login POST (login userid + password + token)</strong></p>
+<p>The user enters login userid and password and submits them, posting them to your login service along with the token.</p>
 <p>Ideally, the submit button would only become active once the token had been obtained.</p>
-<p><strong>8. REST call /rest/risk (userid + token)</strong></p>
+<p><strong>8. REST call /rest/risk (opaque userid + token)</strong></p>
 <p>The login service validates userid/password and, if correct, makes a REST call to the <code>https://riskid.cloud.sorbay.com/rest/risk</code>
-location on the sorbay_risk service, passing <strong>userid</strong> and <strong>token</strong>, plus the <strong>API key</strong> as <code>X-API-Key</code> HTTP request header.</p>
+location on the sorbay_risk service, passing an <strong>opaque userid</strong> and the <strong>token</strong>, plus the <strong>API key</strong> as <code>X-API-Key</code> HTTP request header.</p>
+<div class="admonition info">
+<p class="admonition-title">opaque userid</p>
+<p>The opaque userid should be unique and unchanging per user,
+but it should not be possible to derive it from login userid and/or API-Key.
+Formally, the opaque userid is limited to max 128 characters,
+where upper and lower case letters and numbers are allowed, as well as '+/=-_',
+i.e. covers hex-, base64- and base64url-encodings.
+Technical approaches for the opaque userid would include
+a randomly generated userid  that is stored along other user data
+somewhere where only the login service has access,
+or an HMAC based on a secret key that only the login service knows.</p>
+</div>
 <p><strong>9. risk score</strong></p>
 <p>The sorbay_risk service validated the token before calculating the risk score and returns it.</p>
 <p>Your login service receives the risk score and is free what to do based on its value.</p>
@@ -409,7 +421,7 @@ prevent legitimate user from accessing your service.</p>
 <p>Your login service grants access to the user if the risk score was deemed low enough, otherwise it initiates further authentication steps.</p>
 <p><strong>11. Optional further authentication steps</strong></p>
 <p>Optionally further authentication steps between client and your login service.</p>
-<p><strong>12. REST call /rest/loginok (userid + token)</strong></p>
+<p><strong>12. REST call /rest/loginok (opaque userid + token)</strong></p>
 <p>Whenever your login service decides that login with that user was successful, your login service must make a REST call
 to <code>https://riskid.cloud.sorbay.com/rest/loginok</code> to signal that to the sorbay_risk service.
 Only then does the sorbay_risk service store the gathered attributes from the latest login attempt in its datastore

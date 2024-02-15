@@ -109,6 +109,8 @@ to prevent e.g. replay attacks.
 
 In the JavaScript above, the token is written to the hidden **token** field.
 
+Note: In many error cases, the JavaScript sets an error message as 'token' value. The login service is not required to handle this case in the steps up to here, neither on the client nor on the server, it can just pass that 'token' on to the sorbay_risk service in the REST call below, with the advantage that then the risk service also logs the error, which may in some cases be helpful for later analysis.
+
 **7. Login POST (login userid + password + token)**
 
 The user enters login userid and password and submits them, posting them to your login service along with the token.

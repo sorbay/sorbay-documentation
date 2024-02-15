@@ -57,6 +57,8 @@ login ->> risk: REST call /rest/loginok<br>(opaque userid + token)
 risk -->> login: ok
 ```
 
+*General note:* If any of the steps below fails such that no risk score can be obtained from the sorbay_risk service, this should usually be treated like a maximal risk score (10.0) for obvious security reasons.
+
 **1. GET login page**
 
 A user goes to the login location in their browser/client

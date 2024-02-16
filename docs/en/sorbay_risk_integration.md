@@ -57,6 +57,8 @@ login ->> risk: REST call /rest/loginok<br>(opaque userid + token)
 risk -->> login: ok
 ```
 
+*General note:* If any of the steps below fails such that no risk score can be obtained from the sorbay_risk service, this should usually be treated like a maximal risk score (10.0) for obvious security reasons.
+
 **1. GET login page**
 
 A user goes to the login location in their browser/client
@@ -106,6 +108,8 @@ risk score in the next steps. The token is only valid for a certain period of ti
 to prevent e.g. replay attacks.
 
 In the JavaScript above, the token is written to the hidden **token** field.
+
+Note: In many error cases, the JavaScript sets an error message as 'token' value. The login service is not required to handle this case in the steps up to here, neither on the client nor on the server, it can just pass that 'token' on to the sorbay_risk service in the REST call below, with the advantage that then the risk service also logs the error, which may in some cases be helpful for later analysis.
 
 **7. Login POST (login userid + password + token)**
 

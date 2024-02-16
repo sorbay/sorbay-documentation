@@ -9,7 +9,7 @@
 <link href="../sorbay_risk_configuration/" rel="prev"/>
 <link href="../sorbay_risk_api/" rel="next"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.2, mkdocs-material-9.2.5" name="generator"/>
+<meta content="mkdocs-1.5.2, mkdocs-material-9.2.3" name="generator"/>
 <title>Integration - sorbay documentation</title>
 <link href="../assets/stylesheets/main.0e669242.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -358,6 +358,7 @@ login --&gt;&gt; client : login ok or require&lt;br&gt;further authentication
 login --&gt; client : (opt. further authentication)
 login -&gt;&gt; risk: REST call /rest/loginok&lt;br&gt;(opaque userid + token)
 risk --&gt;&gt; login: ok</code></pre>
+<p><em>General note:</em> If any of the steps below fails such that no risk score can be obtained from the sorbay_risk service, this should usually be treated like a maximal risk score (10.0) for obvious security reasons.</p>
 <p><strong>1. GET login page</strong></p>
 <p>A user goes to the login location in their browser/client
 (directly or redirected when trying to access a protected application).</p>
@@ -392,6 +393,7 @@ connection, the sorbay_risk service returns the opaque <strong>token</strong>. T
 risk score in the next steps. The token is only valid for a certain period of time and can be used only once
 to prevent e.g. replay attacks.</p>
 <p>In the JavaScript above, the token is written to the hidden <strong>token</strong> field.</p>
+<p>Note: In many error cases, the JavaScript sets an error message as 'token' value. The login service is not required to handle this case in the steps up to here, neither on the client nor on the server, it can just pass that 'token' on to the sorbay_risk service in the REST call below, with the advantage that then the risk service also logs the error, which may in some cases be helpful for later analysis.</p>
 <p><strong>7. Login POST (login userid + password + token)</strong></p>
 <p>The user enters login userid and password and submits them, posting them to your login service along with the token.</p>
 <p>Ideally, the submit button would only become active once the token had been obtained.</p>
